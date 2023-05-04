@@ -46,16 +46,17 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("dados", data);
 
     // Show error and reset form
-    if (data.erro === "true") {
+    if (data.erro === true) {
       if (!addressInput.hasAttribute("disabled")) {
-        toggleDisabled();
-      }
+        toggleDisabled()
       
+      }
+
       setTimeout(() => {
         toggleLoader();
         toggleMessage("CEP invalido, tente novamente!");
         addressForm.reset();
-      }, 2000);
+      }, 1500);
       
       return;
     }
@@ -87,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //Show or hide loader
   const toggleLoader = () => {
-    const fadeElement = document.querySelector("#fade");
+  
     const loaderElement = document.querySelector("#loader");
     fadeElement.classList.toggle("hide");
     loaderElement.classList.toggle("hide");
